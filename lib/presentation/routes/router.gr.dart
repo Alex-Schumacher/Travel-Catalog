@@ -46,6 +46,7 @@ class AppRouter extends _i4.RootStackRouter {
       return _i4.MaterialPageX<dynamic>(
         routeData: routeData,
         child: _i3.DetailledActivity(
+          backgroundImageUrl: args.backgroundImageUrl,
           activity: args.activity,
           key: args.key,
         ),
@@ -120,12 +121,14 @@ class ActivityRouteArgs {
 /// [_i3.DetailledActivity]
 class DetailledActivity extends _i4.PageRouteInfo<DetailledActivityArgs> {
   DetailledActivity({
+    required String backgroundImageUrl,
     required _i6.Activity activity,
     _i5.Key? key,
   }) : super(
           DetailledActivity.name,
           path: '/detailled-activity',
           args: DetailledActivityArgs(
+            backgroundImageUrl: backgroundImageUrl,
             activity: activity,
             key: key,
           ),
@@ -136,9 +139,12 @@ class DetailledActivity extends _i4.PageRouteInfo<DetailledActivityArgs> {
 
 class DetailledActivityArgs {
   const DetailledActivityArgs({
+    required this.backgroundImageUrl,
     required this.activity,
     this.key,
   });
+
+  final String backgroundImageUrl;
 
   final _i6.Activity activity;
 
@@ -146,6 +152,6 @@ class DetailledActivityArgs {
 
   @override
   String toString() {
-    return 'DetailledActivityArgs{activity: $activity, key: $key}';
+    return 'DetailledActivityArgs{backgroundImageUrl: $backgroundImageUrl, activity: $activity, key: $key}';
   }
 }

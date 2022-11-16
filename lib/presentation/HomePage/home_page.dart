@@ -7,6 +7,8 @@ import 'package:travel_catalog/dummy_data.dart';
 import 'package:travel_catalog/presentation/routes/router.gr.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../infrastructure/algorithms.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -197,15 +199,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Future<void> launchMaps(double lat, double lng) async {
-  var urlAppleMaps = 'https://maps.apple.com/?q=$lat,$lng';
-
-  if (await canLaunch(urlAppleMaps)) {
-    await launch(urlAppleMaps);
-  } else {
-    throw 'Could not launch Maps';
-  }
-} /*Container(
+/*Container(
       height: double.infinity,
       width: double.infinity,
       child: Stack(children: [

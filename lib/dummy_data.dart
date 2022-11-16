@@ -67,6 +67,7 @@ List<Activity> activities = [
       description:
           'bar dans un réfrigérateur avec des places et verres en glace',
       adress: '5, Novotného lávka 200, Staré Město, 110 00 Praha, Tchéquie',
-      imageUrl: 'https://www.evgaprague.fr/obj/files/6/sys_media_4136.jpg')
+      imageUrl:
+          'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsteemitimages.com%2F0x0%2Fhttp%3A%2F%2Fwww.aimhighwithvanicci.com%2Fwp-content%2Fuploads%2F2018%2F02%2F2b-ICEPUB-PRAGUE-in-Prague-Czech-Republic-one-of-the-most-fantastic-Ice-Bars-in-Europe.jpg&f=1&nofb=1&ipt=bccf067d82268d5ff501deb3eef885844f2c349a2614f8f3c1908543ae0d4932&ipo=images')
 ];
 //

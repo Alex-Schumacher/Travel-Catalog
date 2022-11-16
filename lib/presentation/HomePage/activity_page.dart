@@ -121,6 +121,7 @@ class _ActivityPageState extends State<ActivityPage> {
                               true, //reduit la hauteur du listView pour juste afficher la hauteur nécéssaire.
                           itemCount: selectedActivities.length,
                           itemBuilder: (context, index) => ActivityCard(
+                            backgroundImageUrl: widget.backgroundImageUrl,
                             w: w,
                             h: h,
                             activity: selectedActivities[index],
@@ -201,18 +202,21 @@ class ActivityCard extends StatelessWidget {
     required this.w,
     required this.h,
     required this.activity,
+    required this.backgroundImageUrl,
   }) : super(key: key);
 
   final double w;
   final double h;
   final Activity activity;
+  final String backgroundImageUrl;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(vertical: h / 66.7, horizontal: w / 20),
       child: InkWell(
         onTap: () {
-          context.router.push(DetailledActivity(activity: activity));
+          context.router.push(DetailledActivity(
+              backgroundImageUrl: backgroundImageUrl, activity: activity));
         },
         child: Container(
           decoration: const BoxDecoration(
