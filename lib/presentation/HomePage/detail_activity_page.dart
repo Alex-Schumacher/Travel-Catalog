@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_catalog/domain/category.dart';
+import 'package:travel_catalog/domain/Activity.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:travel_catalog/presentation/widget/AnimatedCircle.dart';
 
@@ -67,27 +67,6 @@ class _DetailledActivityState extends State<DetailledActivity> {
 
     return Scaffold(
         body: Stack(children: [
-      InkWell(
-        onTap: () {
-          context.router.pop();
-        },
-        child: Container(
-          width: w / 8,
-          height: w / 8,
-          decoration: const BoxDecoration(
-              boxShadow: [],
-              shape: BoxShape.rectangle,
-              color: Colors.white,
-              borderRadius:
-                  BorderRadius.only(bottomRight: Radius.circular(45))),
-          alignment: Alignment.topCenter,
-          child: const Padding(
-            padding: EdgeInsets.fromLTRB(0, 10, 5, 0),
-            child: Icon(Icons.arrow_back_rounded),
-          ),
-        ),
-      ),
-
       /*BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
             child: Container(
@@ -98,6 +77,7 @@ class _DetailledActivityState extends State<DetailledActivity> {
 
       Stack(
         children: [
+          for (int i = 0; i < 8; i++) RandomCircle(),
           Container(
               height: h / 2,
               width: w,
@@ -108,7 +88,7 @@ class _DetailledActivityState extends State<DetailledActivity> {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: h / 1.8,
+              height: h / 2,
               width: w,
               decoration: BoxDecoration(
                 boxShadow: [
@@ -118,13 +98,13 @@ class _DetailledActivityState extends State<DetailledActivity> {
                           offset: Offset(0, -10),
                           color: Colors.black54)*/
                 ],
-                borderRadius: BorderRadius.vertical(top: Radius.circular(40)),
-                color: Color.fromARGB(255, 53, 53, 53),
+                color: Color.fromARGB(125, 53, 53, 53),
               ),
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     AutoSizeText(
@@ -146,11 +126,11 @@ class _DetailledActivityState extends State<DetailledActivity> {
                       ),
                     ),
                     AutoSizeText(
-                      maxLines: 3,
+                      maxLines: 2,
                       widget.activity.adress,
                       style: TextStyle(
                         color: Colors.white70,
-                        fontSize: h / 30,
+                        fontSize: h / 40,
                         fontFamily: 'Roboto',
                       ),
                     ),
@@ -158,7 +138,7 @@ class _DetailledActivityState extends State<DetailledActivity> {
                       padding: const EdgeInsets.all(4),
                       child: InkWell(
                         onTap: () {
-                          launchMaps(50.08707, 14.41768);
+                          //  launchMaps(50.08707, 14.41768);
                         },
                         child: Container(
                           height: h / 10,
@@ -178,7 +158,26 @@ class _DetailledActivityState extends State<DetailledActivity> {
                 ),
               ),
             ),
-          )
+          ),
+          InkWell(
+            onTap: () {
+              context.router.pop();
+            },
+            child: Container(
+              width: w / 8,
+              height: w / 8,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  color: Colors.white54,
+                  borderRadius:
+                      BorderRadius.only(bottomRight: Radius.circular(30))),
+              alignment: Alignment.topCenter,
+              child: const Padding(
+                padding: EdgeInsets.fromLTRB(0, 10, 5, 0),
+                child: Icon(Icons.arrow_back_rounded),
+              ),
+            ),
+          ),
         ],
       ),
       /* Padding(

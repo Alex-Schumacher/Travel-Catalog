@@ -1,4 +1,4 @@
-import './domain/category.dart';
+import 'domain/Activity.dart';
 
 List<Activity> activities = [
   Activity(

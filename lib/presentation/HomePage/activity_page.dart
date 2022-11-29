@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_catalog/domain/category.dart';
+import 'package:travel_catalog/domain/Activity.dart';
 import 'package:travel_catalog/dummy_data.dart';
 import 'package:travel_catalog/presentation/routes/router.gr.dart';
 

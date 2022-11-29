@@ -1,8 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class AnimatedCircle extends StatefulWidget {
   AnimatedCircle({required this.child, required this.duration, super.key});
